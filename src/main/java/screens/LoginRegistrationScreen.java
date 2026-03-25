@@ -27,6 +27,9 @@ public class LoginRegistrationScreen extends BaseScreen {
     public void clickBtnRegistration(){
         btnRegistration.click();
     }
+    public void clickBtnLogin(){
+        btnLogin.click();
+    }
     public boolean isBtnRegistrationPresent(String text, int time){
         return isTextInElementPresent(btnRegistration, text, time);
     }

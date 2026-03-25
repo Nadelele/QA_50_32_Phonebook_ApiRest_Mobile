@@ -20,4 +20,13 @@ public class BaseScreen {
         return new WebDriverWait(driver, Duration.ofSeconds(time))
                 .until(ExpectedConditions.textToBePresentInElement(element, text));
    }
+    public boolean isElementVisible(WebElement element, int time) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

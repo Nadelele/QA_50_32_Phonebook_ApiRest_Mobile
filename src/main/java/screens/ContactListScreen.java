@@ -15,6 +15,8 @@ public class ContactListScreen extends BaseScreen {
     WebElement btnMoreOptions;
     @AndroidFindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/title' and @text='Logout']")
     WebElement btnLogOut;
+    @AndroidFindBy(xpath = "//*[@text='Contact list']")
+    WebElement contactListText;
 
     public boolean isNoContactTextPresent(String text, int time){
         return isTextInElementPresent(noContactsText, text, time);
@@ -24,5 +26,8 @@ public class ContactListScreen extends BaseScreen {
     }
     public void clickBtnLogout(){
         btnLogOut.click();
+    }
+    public boolean isMoreOptionsVisible(){
+        return isElementVisible(btnMoreOptions, 5);
     }
 }
